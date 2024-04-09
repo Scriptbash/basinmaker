@@ -407,7 +407,7 @@ def GenerateHRUS_purepy(
     hru_land_info = clean_attribute_name_purepy(hru_land_info,fieldnames)
 
 
-    hruinfo = hru_lake_info.append(hru_land_info)
+    hruinfo = pd.concat([hru_lake_info,hru_land_info])
 
     hruinfo.to_file(os.path.join(tempfolder,'HRU_with_attributes.shp'))
 
